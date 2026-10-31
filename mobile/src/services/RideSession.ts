@@ -124,7 +124,7 @@ class Session {
 
     await this.startOffline(ride);
     if (ride.status === 'ACTIVE') this.onRideActive();
-    AudioRouting.startRideService(`RideWave · ${ride.name}`, 'Ride in progress — intercom and location sharing active', true);
+    AudioRouting.startRideService(`RideOmeter · ${ride.name}`, 'Ride in progress — intercom and location sharing active', true);
     this.refresh().catch(() => undefined);
   }
 

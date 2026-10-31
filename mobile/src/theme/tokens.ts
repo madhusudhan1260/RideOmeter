@@ -1,5 +1,5 @@
 /**
- * RideWave "Instrument Cluster" design tokens.
+ * RideOmeter "Instrument Cluster" design tokens.
  * Matte surfaces, hairline bezels, one amber accent, red reserved for danger.
  */
 

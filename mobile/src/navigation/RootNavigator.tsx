@@ -74,7 +74,7 @@ export function RootNavigator() {
   if (status === 'loading') {
     return (
       <View style={{ flex: 1, backgroundColor: c.bg, justifyContent: 'center' }}>
-        <LoadingState label="Starting RideWave" />
+        <LoadingState label="Starting RideOmeter" />
       </View>
     );
   }

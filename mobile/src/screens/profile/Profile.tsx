@@ -183,7 +183,7 @@ export function SettingsScreen() {
       </Bezel>
       <SectionHeader title="SERVER" />
       <Bezel>
-        <Field label="RideWave server" value={server} onChangeText={setServer} autoCapitalize="none" keyboardType="url" />
+        <Field label="RideOmeter server" value={server} onChangeText={setServer} autoCapitalize="none" keyboardType="url" />
         <Button title="Save server" kind="quiet" onPress={() => setApiBaseUrl(server.trim())} />
       </Bezel>
       <SectionHeader title="PRIVACY" />

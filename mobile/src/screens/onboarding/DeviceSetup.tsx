@@ -72,7 +72,7 @@ export function DeviceSetupScreen({ navigation, route }: RootScreen<'DeviceSetup
         Helmet headset
       </Txt>
       <Txt dim style={{ marginTop: space.sm }}>
-        Pair your helmet in Android Bluetooth settings first. RideWave then routes the intercom and announcements to it.
+        Pair your helmet in Android Bluetooth settings first. RideOmeter then routes the intercom and announcements to it.
       </Txt>
       <Gap />
 
@@ -83,7 +83,7 @@ export function DeviceSetupScreen({ navigation, route }: RootScreen<'DeviceSetup
             <Txt v="heading">{helmet ? helmet.name : supported ? 'No headset connected' : 'Not available'}</Txt>
             <Txt v="small" dim>
               {!supported
-                ? 'Headset routing needs the Android build of RideWave.'
+                ? 'Headset routing needs the Android build of RideOmeter.'
                 : helmet
                   ? hasHelmetMic(helmet)
                     ? 'Connected with microphone (hands-free profile)'

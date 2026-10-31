@@ -66,7 +66,7 @@ export async function request<T>(method: string, path: string, body?: unknown, o
     try {
       return await fetch(apiBaseUrl() + path, { method, headers, body: payload, signal: ctrl.signal });
     } catch (e: any) {
-      throw new ApiError(0, e?.name === 'AbortError' ? 'Server did not respond in time' : 'Cannot reach the RideWave server');
+      throw new ApiError(0, e?.name === 'AbortError' ? 'Server did not respond in time' : 'Cannot reach the RideOmeter server');
     } finally {
       clearTimeout(timer);
     }

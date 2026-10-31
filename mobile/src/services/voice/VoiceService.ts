@@ -10,7 +10,7 @@ import { Announcer } from '../announce/AnnouncementEngine';
 /**
  * Group voice.
  *  online  → LiveKit room (WebRTC SFU, self-hosted). Push-to-talk toggles the mic track.
- *  offline → Nearby voice frames relayed by the hub (native, see RideWaveVoiceEngine.kt).
+ *  offline → Nearby voice frames relayed by the hub (native, see voice/VoiceEngine.kt).
  * Uses the "communication" audio mode so Android routes mic + output to the helmet's HFP link.
  */
 class Service {

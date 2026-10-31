@@ -1,4 +1,4 @@
-# RideWave API reference
+# RideOmeter API reference
 
 Generated from the FastAPI OpenAPI schema. Live, interactive docs: `http://<server>:8030/docs`.
 

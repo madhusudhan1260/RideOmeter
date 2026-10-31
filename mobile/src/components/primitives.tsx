@@ -328,7 +328,7 @@ export function ErrorState({ error, onRetry }: { error: unknown; onRetry?: () =>
     <EmptyState
       icon={offline ? 'wifiOff' : 'sos'}
       title={offline ? 'You are offline' : 'Could not load'}
-      body={offline ? 'RideWave cannot reach the server. Ride features that work offline are still available.' : msg}
+      body={offline ? 'RideOmeter cannot reach the server. Ride features that work offline are still available.' : msg}
       action={onRetry ? 'Try again' : undefined}
       onAction={onRetry}
     />

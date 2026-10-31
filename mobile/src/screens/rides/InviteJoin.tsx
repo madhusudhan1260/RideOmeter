@@ -52,7 +52,7 @@ export function RideInviteScreen({ route, navigation }: RootScreen<'RideInvite'>
         </Txt>
       </View>
       <Gap h={space.xl} />
-      <Button title="Share invite link" icon="share" size="lg" onPress={() => Share.share({ message: `Join my RideWave ride "${ride.name}": ${link} (code ${ride.join_code})` })} />
+      <Button title="Share invite link" icon="share" size="lg" onPress={() => Share.share({ message: `Join my RideOmeter ride "${ride.name}": ${link} (code ${ride.join_code})` })} />
       <Gap h={space.md} />
       <Row gap={space.md}>
         <Button title="New code" kind="ghost" loading={busy} onPress={regenerate} style={{ flex: 1 }} />
@@ -73,7 +73,7 @@ export function JoinRideScreen({ route, navigation }: RootScreen<'JoinRide'>) {
 
   const join = async (raw = code) => {
     const parsed = parseJoinCode(raw);
-    if (!parsed) return setErr('That does not look like a RideWave code');
+    if (!parsed) return setErr('That does not look like a RideOmeter code');
     setBusy(true);
     setErr(null);
     try {

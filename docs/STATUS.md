@@ -1,4 +1,4 @@
-# RideWave — Feature status
+# RideOmeter — Feature status
 
 Honest status of every feature. Four categories, as required:
 
@@ -9,7 +9,7 @@ Honest status of every feature. Four categories, as required:
 * **Not yet supported** — not built; the reason and the practical alternative are given.
 
 Last verified: 2026-10-31 — backend `pytest`: **51 passed**; mobile `tsc --noEmit`: **0 errors**; mobile `jest`: **21 passed**;
-Android `assembleDebug` (arm64-v8a): **BUILD SUCCESSFUL** — all native libraries and the RideWave Kotlin modules compile.
+Android `assembleDebug` (arm64-v8a): **BUILD SUCCESSFUL** — all native libraries and the RideOmeter Kotlin modules compile.
 **On-device (2026-10-31, Redmi 15A 5G, HyperOS / Android 16, over USB with `adb reverse`):** app installs and launches
 (Fabric on), onboarding renders, and registration → profile → ride lists → device registration, ride create → invite → start, live WebSocket
 (`/ws/rides/{id}` accepted) and voice-token issue all succeeded against the local backend. **Online voice not yet

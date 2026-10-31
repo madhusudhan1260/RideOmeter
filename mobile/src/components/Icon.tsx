@@ -2,7 +2,7 @@ import React from 'react';
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 import { useTheme } from '../theme/ThemeProvider';
 
-/** RideWave's own line icon set: 24-unit grid, 1.8 stroke, rounded joins. */
+/** RideOmeter's own line icon set: 24-unit grid, 1.8 stroke, rounded joins. */
 const P: Record<string, (c: string) => React.ReactNode> = {
   home: c => <Path d="M3 11.5 12 4l9 7.5M5.5 9.5V20h13V9.5M10 20v-5h4v5" stroke={c} />,
   rides: c => (

@@ -5,7 +5,7 @@ import { kv } from '../storage/db';
 /**
  * Spotify via the official Web API with OAuth PKCE (no client secret on the phone).
  * Each rider authorises their own account and their own Spotify app plays the audio;
- * RideWave only tells it which track and position. Never relays Spotify audio.
+ * RideOmeter only tells it which track and position. Never relays Spotify audio.
  *
  * Requirements surfaced in the UI rather than hidden:
  *  - Spotify Premium for on-demand playback control (Web API returns 403 otherwise)

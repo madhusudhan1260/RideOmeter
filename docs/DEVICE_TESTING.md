@@ -1,4 +1,4 @@
-# RideWave — Device testing checklist
+# RideOmeter — Device testing checklist
 
 Nothing in the "needs device testing" column of `STATUS.md` is considered working until it passes here.
 Record device model, Android version and result for each line.

@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_prefix="RW_", extra="ignore")
 
     env: str = "development"
-    app_name: str = "RideWave API"
+    app_name: str = "RideOmeter API"
     database_url: str = "sqlite:///./ridewave.db"
     public_base_url: str = "http://localhost:8030"
     cors_origins: list[str] = ["http://localhost:8081"]

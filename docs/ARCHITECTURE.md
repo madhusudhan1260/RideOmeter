@@ -1,6 +1,6 @@
-# RideWave — Architecture
+# RideOmeter — Architecture
 
-RideWave is a group-riding companion: ride management, intercom, synced music, live map,
+RideOmeter is a group-riding companion: ride management, intercom, synced music, live map,
 stop requests and SOS, with an online path (FastAPI + WebSocket + LiveKit) and an offline
 path (Android Nearby Connections). This document is the Phase 1 output: the analysis,
 the hard problems, and the decisions taken. `docs/STATUS.md` tracks what is actually built.
@@ -64,7 +64,7 @@ drops duplicates, so an SOS that arrives over both Nearby and WebSocket is proce
 ### 3.2 Topology: leader-based star
 
 Nearby offers `P2P_CLUSTER` (M-to-N, Bluetooth-bandwidth only) and `P2P_STAR` (1-to-N, may
-upgrade to Wi-Fi). Voice needs bandwidth, so RideWave uses **`P2P_STAR` with a hub**:
+upgrade to Wi-Fi). Voice needs bandwidth, so RideOmeter uses **`P2P_STAR` with a hub**:
 
 ```
           rider B
@@ -110,7 +110,7 @@ rider C ── HUB (admin or elected) ── rider D
   battery-optimisation exemption.
 * **iOS**: Nearby Connections is Android-only for this use. iOS ↔ Android offline is **not
   supported**. iOS offline (MultipeerConnectivity, iOS-only) is listed as future work.
-* **Helmet mesh**: many helmets (Sena Mesh, Cardo DMC) already have their own intercom. RideWave
+* **Helmet mesh**: many helmets (Sena Mesh, Cardo DMC) already have their own intercom. RideOmeter
   doesn't replace it; it coexists by using the phone↔helmet HFP link.
 
 ---

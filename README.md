@@ -1,4 +1,12 @@
-# RideWave
+# RideOmeter
+
+<p align="center">
+  <img src="docs/screenshots/1-home.png" width="200" alt="Home">
+  <img src="docs/screenshots/2-ride-dashboard.png" width="200" alt="Ride dashboard">
+  <img src="docs/screenshots/3-intercom.png" width="200" alt="Intercom">
+  <img src="docs/screenshots/4-emergency.png" width="200" alt="Emergency">
+</p>
+<p align="center"><sub>Home · Ride dashboard · Intercom · Emergency — UI renders of the app's screens with sample ride data</sub></p>
 
 Motorcycle group-riding companion: ride management, group intercom (online + offline), synchronized music,
 live group map, two-tap stop requests and SOS — with an honest offline mode.
@@ -94,7 +102,7 @@ keytool -genkeypair -v -keystore ridewave-release.keystore -alias ridewave -keya
 ### Spotify (optional)
 
 1. Create an app at developer.spotify.com (free), add redirect URI `com.ridewave.app:/spotify-callback`.
-2. In RideWave → Settings → Spotify, paste the Client ID. Each rider connects their own account in Music → Library.
+2. In RideOmeter → Settings → Spotify, paste the Client ID. Each rider connects their own account in Music → Library.
 
 ## How offline works (short version)
 

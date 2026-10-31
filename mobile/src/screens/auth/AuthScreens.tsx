@@ -7,7 +7,7 @@ import type { RootScreen } from '../../navigation/types';
 import { useAuth } from '../../store/auth';
 import { useTheme } from '../../theme/ThemeProvider';
 import { space } from '../../theme/tokens';
-import { RideWaveMark } from '../onboarding/Welcome';
+import { BrandMark } from '../onboarding/Welcome';
 
 const msg = (e: any) => e?.detail ?? e?.message ?? 'Something went wrong';
 
@@ -63,9 +63,9 @@ export function LoginScreen({ navigation }: RootScreen<'Login'>) {
     <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       <Screen>
         <Gap h={space.xxxl} />
-        <RideWaveMark size={72} />
+        <BrandMark size={72} />
         <Gap h={space.lg} />
-        <Label color={c.accent}>RIDEWAVE</Label>
+        <Label color={c.accent}>RIDEOMETER</Label>
         <Txt v="title">Welcome back</Txt>
         <Gap h={space.xl} />
         <InlineError message={err} />

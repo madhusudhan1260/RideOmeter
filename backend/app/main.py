@@ -25,7 +25,7 @@ log = logging.getLogger("ridewave")
 async def lifespan(_: FastAPI):
     s = get_settings()
     Path(s.media_dir, "avatars").mkdir(parents=True, exist_ok=True)
-    log.info("RideWave API starting (env=%s, db=%s)", s.env, s.database_url.split("@")[-1])
+    log.info("RideOmeter API starting (env=%s, db=%s)", s.env, s.database_url.split("@")[-1])
     yield
 
 
@@ -81,11 +81,11 @@ def create_app() -> FastAPI:
     def invite_landing(code: str):
         safe = "".join(c for c in code if c.isalnum())[:64]
         return f"""<!doctype html><meta name=viewport content="width=device-width,initial-scale=1">
-<title>Join ride on RideWave</title>
+<title>Join ride on RideOmeter</title>
 <body style="background:#0B0C0E;color:#fff;font-family:system-ui;display:grid;place-items:center;min-height:100vh;margin:0">
-<div style="text-align:center;padding:24px"><p style="color:#FF8A00;letter-spacing:.2em">RIDEWAVE</p>
+<div style="text-align:center;padding:24px"><p style="color:#FF8A00;letter-spacing:.2em">RIDEOMETER</p>
 <h1>You're invited to a ride</h1><p>Code <b style="font-size:28px;letter-spacing:.15em">{safe}</b></p>
-<p><a style="color:#FF8A00" href="ridewave://join/{safe}">Open in RideWave</a></p></div></body>"""
+<p><a style="color:#FF8A00" href="ridewave://join/{safe}">Open in RideOmeter</a></p></div></body>"""
 
     Path(s.media_dir).mkdir(parents=True, exist_ok=True)
     app.mount("/media", StaticFiles(directory=s.media_dir), name="media")

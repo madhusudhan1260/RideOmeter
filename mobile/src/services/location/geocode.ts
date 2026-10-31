@@ -14,7 +14,7 @@ export async function searchPlaces(q: string, near?: { lat: number; lng: number 
   const params = new URLSearchParams({ q, format: 'jsonv2', limit: '6', addressdetails: '0' });
   if (near) params.set('viewbox', `${near.lng - 1},${near.lat + 1},${near.lng + 1},${near.lat - 1}`);
   const res = await fetch(`https://nominatim.openstreetmap.org/search?${params}`, {
-    headers: { 'User-Agent': 'RideWave/0.1 (motorcycle group ride app)', 'Accept-Language': 'en' },
+    headers: { 'User-Agent': 'RideOmeter/0.1 (motorcycle group ride app)', 'Accept-Language': 'en' },
   });
   if (!res.ok) throw new Error('Place search unavailable');
   const rows: any[] = await res.json();

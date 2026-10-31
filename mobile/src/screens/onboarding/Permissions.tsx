@@ -73,7 +73,7 @@ export function PermissionsScreen({ navigation }: RootScreen<'Permissions'>) {
         Permissions
       </Txt>
       <Txt dim style={{ marginTop: space.sm }}>
-        RideWave only asks for what the ride features need. You can change these later in Android settings.
+        RideOmeter only asks for what the ride features need. You can change these later in Android settings.
       </Txt>
       <Gap />
       {ITEMS.map(it => {

@@ -9,7 +9,7 @@ import { useTheme } from '../../theme/ThemeProvider';
 import { space } from '../../theme/tokens';
 
 /** Brand mark: a speedometer sweep crossed by a sound wave. */
-export function RideWaveMark({ size = 120 }: { size?: number }) {
+export function BrandMark({ size = 120 }: { size?: number }) {
   const { c } = useTheme();
   return (
     <Svg width={size} height={size} viewBox="0 0 120 120">
@@ -41,9 +41,9 @@ export function WelcomeScreen({ navigation }: RootScreen<'Welcome'>) {
     <Screen>
       <Gap h={space.lg} />
       <Animated.View entering={FadeInDown.duration(600)} style={{ alignItems: 'center' }}>
-        <RideWaveMark size={96} />
+        <BrandMark size={96} />
         <Gap h={space.lg} />
-        <Label color={c.accent}>RIDEWAVE</Label>
+        <Label color={c.accent}>RIDEOMETER</Label>
         <Txt v="hero" center style={{ marginTop: space.sm }}>
           Ride together.{'\n'}Stay connected.
         </Txt>

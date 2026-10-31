@@ -1,0 +1,30 @@
+# Optional local stack: Postgres + self-hosted LiveKit + API. All free/open-source.
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ridewave
+      POSTGRES_PASSWORD: ridewave
+      POSTGRES_DB: ridewave
+    ports: ["5433:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+
+  livekit:
+    image: livekit/livekit-server:v1.8
+    command: --dev --bind 0.0.0.0 --node-ip ${LAN_IP:-127.0.0.1}
+    ports:
+      - "7880:7880"
+      - "7881:7881"
+      - "7882:7882/udp"
+
+  api:
+    build: ./backend
+    env_file: ./backend/.env
+    environment:
+      RW_DATABASE_URL: postgresql+psycopg://ridewave:ridewave@db:5432/ridewave
+      RW_LIVEKIT_URL: ws://${LAN_IP:-127.0.0.1}:7880
+    ports: ["8030:8030"]
+    depends_on: [db, livekit]
+
+volumes:
+  pgdata:

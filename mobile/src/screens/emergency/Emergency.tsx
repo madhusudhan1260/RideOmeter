@@ -17,6 +17,8 @@ import { ago } from '../../utils/freshness';
 /** Local emergency number (India: 112). Change in a future locale setting. */
 const EMERGENCY_NUMBER = '112';
 
+const VIA_LABEL = { ws: 'server', nearby: 'nearby mesh', outbox: 'queued for sync' } as const;
+
 export function EmergencyScreen(_: RootScreen<'Emergency'>) {
   const { c } = useTheme();
   const live = useRide();
@@ -87,7 +89,7 @@ export function EmergencyScreen(_: RootScreen<'Emergency'>) {
                 <DeliveryChip status={o.status} delivered={o.deliveredTo.length} recipients={o.recipients} via={o.via} />
               </Row>
               <Txt v="small" dim>
-                Sent {ago(now - o.createdAt)} via {o.via.length ? o.via.join(', ') : 'nothing — no connection'}
+                Sent {ago(now - o.createdAt)} via {o.via.length ? o.via.map(v => VIA_LABEL[v]).join(' + ') : 'nothing — no connection'}
                 {o.error ? ` · ${o.error}` : ''}
               </Txt>
             </Bezel>
